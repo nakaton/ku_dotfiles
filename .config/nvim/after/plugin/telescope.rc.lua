@@ -8,6 +8,8 @@ local function telescope_buffer_dir()
 end
 
 local fb_actions = require "telescope".extensions.file_browser.actions
+-- local flutter_actions = require "telescope".extensions.flutter.actions
+
 
 telescope.setup {
   defaults = {
@@ -41,6 +43,8 @@ telescope.setup {
 }
 
 telescope.load_extension("file_browser")
+-- load flutter-tools commands
+telescope.load_extension("flutter")
 
 vim.keymap.set('n', ';f',
   function()
@@ -76,3 +80,5 @@ vim.keymap.set("n", "sf", function()
     layout_config = { height = 40 }
   })
 end)
+-- Add commands for flutter-tools
+vim.keymap.set('n', ';c', ":Telescope Flutter commands<CR>")
