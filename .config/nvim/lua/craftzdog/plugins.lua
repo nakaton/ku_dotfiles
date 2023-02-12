@@ -4,13 +4,22 @@ if (not status) then
   return
 end
 
+if status then
+  vim.cmd([[
+    augroup packer_user_config
+      autocmd!
+      autocmd BufWritePost init.lua source <afile> | PackerCompile
+    augroup end
+  ]])
+end
+
 vim.cmd [[packadd packer.nvim]]
 
 packer.startup(function(use)
   use 'wbthomason/packer.nvim'
   use {
-    'svrana/neosolarized.nvim',
-    requires = { 'tjdevries/colorbuddy.nvim' }
+      'svrana/neosolarized.nvim',
+      requires = { 'tjdevries/colorbuddy.nvim' }
   }
   use 'nvim-lualine/lualine.nvim' -- Statusline
   use 'nvim-lua/plenary.nvim' -- Common utilities
@@ -27,8 +36,8 @@ packer.startup(function(use)
   use 'glepnir/lspsaga.nvim' -- LSP UIs
   use 'L3MON4D3/LuaSnip'
   use {
-    'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate'
+      'nvim-treesitter/nvim-treesitter',
+      run = ':TSUpdate'
   }
   use 'kyazdani42/nvim-web-devicons' -- File icons
   use 'nvim-telescope/telescope.nvim'
@@ -38,12 +47,23 @@ packer.startup(function(use)
   use 'norcalli/nvim-colorizer.lua'
   use 'folke/zen-mode.nvim'
   use({
-    "iamcco/markdown-preview.nvim",
-    run = function() vim.fn["mkdp#util#install"]() end,
+      "iamcco/markdown-preview.nvim",
+      run = function() vim.fn["mkdp#util#install"]() end,
   })
   use 'akinsho/nvim-bufferline.lua'
+  -- Flutter
+  use { 'akinsho/flutter-tools.nvim', requires = 'nvim-lua/plenary.nvim' }
+  use 'mfussenegger/nvim-dap'
+
   -- use 'github/copilot.vim'
 
   use 'lewis6991/gitsigns.nvim'
   use 'dinhhuy258/git.nvim' -- For git blame & browse
+  use {
+      'phaazon/hop.nvim',
+      branch = 'v2',
+      config = function()
+        require 'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
+      end
+  }
 end)

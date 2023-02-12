@@ -1,4 +1,5 @@
 local keymap = vim.keymap
+vim.g.mapleader = ' '
 
 keymap.set('n', 'x', '"_x')
 
@@ -35,3 +36,11 @@ keymap.set('n', '<C-w><down>', '<C-w>-')
 
 -- Map jj to esc Add by Nick
 vim.api.nvim_set_keymap("i", "jj", "<Esc>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<C-j>", "5j", { noremap = true })
+vim.api.nvim_set_keymap("n", "<C-k>", "5k", { noremap = true })
+-- Move up or down
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+-- Keep it centered when searching
+vim.api.nvim_set_keymap("n", "n", "nzzzv", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "N", "nzzzv", { noremap = true, silent = true })
