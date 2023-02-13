@@ -1,7 +1,11 @@
 local keymap = vim.keymap
 vim.g.mapleader = ' '
 
+-- Do not yank with x
 keymap.set('n', 'x', '"_x')
+
+-- Let yank could paste multi times
+keymap.set('v', '<leader>p', '"0p')
 
 -- Increment/decrement
 keymap.set('n', '+', '<C-a>')
