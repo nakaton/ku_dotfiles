@@ -66,4 +66,5 @@ packer.startup(function(use)
         require 'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
       end
   }
+  use 'numToStr/Comment.nvim'
 end)
