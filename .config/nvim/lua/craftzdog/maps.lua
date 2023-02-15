@@ -42,6 +42,8 @@ keymap.set('n', '<C-w><down>', '<C-w>-')
 vim.api.nvim_set_keymap("i", "jj", "<Esc>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<C-j>", "5j", { noremap = true })
 vim.api.nvim_set_keymap("n", "<C-k>", "5k", { noremap = true })
+vim.api.nvim_set_keymap("n", "gb", "<C-o>", { noremap = true })
+vim.api.nvim_set_keymap("n", "gf", "<C-i>", { noremap = true })
 -- Move up or down
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")

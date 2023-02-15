@@ -8,5 +8,5 @@ mason.setup({
 })
 
 lspconfig.setup {
-  ensure_installed = { "sumneko_lua", "tailwindcss", "pylsp" },
+    ensure_installed = { "sumneko_lua", "tailwindcss", "pyright" },
 }

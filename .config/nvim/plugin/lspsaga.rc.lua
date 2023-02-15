@@ -17,11 +17,12 @@ vim.keymap.set('n', '<C-p>', '<Cmd>Lspsaga diagnostic_jump_prev<CR>', opts)
 vim.keymap.set('i', '<C-k>', '<Cmd>Lspsaga signature_help<CR>', opts)
 -- Press twise 'K' would trigger to jump in the prompt window and select content from hover doc
 vim.keymap.set('n', 'K', '<Cmd>Lspsaga hover_doc<CR>', opts)
-vim.keymap.set('n', 'gd', '<Cmd>Lspsaga lsp_finder<CR>', opts)
+vim.keymap.set('n', 'gh', '<Cmd>Lspsaga lsp_finder<CR>', opts)
 vim.keymap.set('n', 'gp', '<Cmd>Lspsaga peek_definition<CR>', opts)
-vim.keymap.set('n', 'gr', '<Cmd>Lspsaga rename<CR>', opts)
+vim.keymap.set('n', 'gc', '<Cmd>Lspsaga rename<CR>', opts)
 -- Clear vim hlsearch (highlight search)
-vim.keymap.set('n', 'gc', '<Cmd>noh<CR>', opts)
+vim.keymap.set('n', '<leader>ch', '<Cmd>noh<CR>', opts)
+
 -- Show line diagnostics
 vim.keymap.set("n", "<leader>sl", "<cmd>Lspsaga show_line_diagnostics<CR>")
 
