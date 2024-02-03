@@ -100,3 +100,6 @@ vim.keymap.set("n", "<leader>o", "<cmd>Lspsaga outline<CR>")
 vim.keymap.set("n", "<leader>sl", "<cmd>Lspsaga show_line_diagnostics<CR>")
 -- Clear vim hlsearch (highlight search)
 vim.keymap.set("n", "<leader>ch", "<Cmd>noh<CR>", opts)
+
+-- Add commands for flutter-tools
+vim.keymap.set("n", ";c", ":Telescope Flutter commands<CR>")
